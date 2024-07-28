@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Layout with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=AvertaStd&display=swap');
+
+        .font-candal {
+            font-family: 'Candal', sans-serif;
+        }
+
+        .font-averta {
+            font-family: 'AvertaStd', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#17101B] text-white m-0 p-0 flex flex-col items-center justify-center min-h-screen">
+    <header class="bg-gradient-to-r from-[#17101B] to-[#211727] text-white px-5 py-2 flex flex-col lg:flex-row items-center justify-between sticky top-0 z-50 w-full">
+        <div class="w-full flex justify-between items-center">
+            <h1 class="text-2xl font-candal font-normal">Your Site</h1>
+            <button id="menu-btn" class="block lg:hidden focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="menu" class="hidden lg:flex flex-col lg:flex-row items-center lg:space-x-6 font-averta w-full lg:w-auto">
+            <ul class="list-none p-0 flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8 w-full lg:w-auto">
+                <li><a href="#" class="hover:text-[#ff76bb]">Link 1</a></li>
+                <li><a href="#" class="hover:text-[#ff76bb]">Link 2</a></li>
+                <li><a href="#" class="hover:text-[#ff76bb]">Link 3</a></li>
+                <li><a href="#" class="hover:text-[#ff76bb]">Link 4</a></li>
+            </ul>
+            <a href="#" class="bg-[#E12963] text-white py-2 px-4 rounded-full font-averta text-lg font-normal hover:bg-[#ff76bb] mt-2 lg:mt-0">Get in Touch</a>
+        </nav>
+    </header>
+    <main class="flex flex-col items-center justify-center text-center mt-10">
+        <img src="your-profile-photo-url.jpg" alt="Gowtham Profile Photo" class="rounded-full w-40 h-40 mb-5">
+        <h2 class="text-2xl font-candal">Welcome to My Profile</h2>
+        <p class="text-lg font-averta">This is the body content, centered on the page.</p>
+    </main>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
